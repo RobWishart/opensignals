@@ -111,6 +111,7 @@ class RSI(FeatureGenerator):
 
         # group by era (date)
         logger.debug('grouping by dates...')
+        ticker_data = ticker_data. fillna(0)
         date_groups = ticker_data.groupby('date')
 
         # create quintile labels within each era, useful for learning
@@ -200,6 +201,7 @@ class SMA(FeatureGenerator):
 
         # group by era (date)
         logger.debug('grouping by dates...')
+        ticker_data = ticker_data. fillna(0)
         date_groups = ticker_data.groupby('date')
 
         # create quintile labels within each era, useful for
