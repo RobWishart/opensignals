@@ -145,7 +145,10 @@ class Provider(ABC):
 
         # train test split
         train_data = ml_data[ml_data['data_type'] == 'train']
-        test_data = ml_data[ml_data['data_type'] == 'validation']
+        if FRIDAYONLY:
+            test_data = ml_data[ml_data['data_type'] == 'validation']
+        else:
+            test_data = ml_data
         return train_data, test_data
 
     def get_data(self,
