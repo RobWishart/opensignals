@@ -132,7 +132,8 @@ class Provider(ABC):
         # for training and testing we want clean, complete data only
         ml_data = ml_data.dropna(subset=feature_names)
         # ensure we have only fridays
-        ml_data = ml_data[ml_data.index.weekday == 4]
+        if FRIDAYONLY:
+            ml_data = ml_data[ml_data.index.weekday == 4]
         # drop eras with under 50 observations per era
         ml_data = ml_data[ml_data.index.value_counts() > 50]
 
