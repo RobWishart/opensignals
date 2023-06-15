@@ -140,8 +140,8 @@ class Provider(ABC):
         if FRIDAYONLY:
             ml_data = ml_data[ml_data.index.weekday == 4]
             print (len(ml_data))
-        # drop eras with under 50 observations per era
-        ml_data = ml_data[ml_data.index.value_counts() > 50]
+            # drop eras with under 50 observations per era
+            ml_data = ml_data[ml_data.index.value_counts() > 50]
 
         # train test split
         train_data = ml_data[ml_data['data_type'] == 'train']
