@@ -134,6 +134,7 @@ class Provider(ABC):
         # ensure we have only fridays
         print('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ')
         print(FRIDAYONLY)
+        print (len(ticker_data))
         print (len(ml_data))
         print('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ')
         if FRIDAYONLY:
