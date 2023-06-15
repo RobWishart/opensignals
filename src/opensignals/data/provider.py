@@ -134,11 +134,11 @@ class Provider(ABC):
         # ensure we have only fridays
         print('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ')
         print(FRIDAYONLY)
-        print len(ml_data)
+        print (len(ml_data))
         print('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ')
         if FRIDAYONLY:
             ml_data = ml_data[ml_data.index.weekday == 4]
-            print len(ml_data)
+            print (len(ml_data))
         # drop eras with under 50 observations per era
         ml_data = ml_data[ml_data.index.value_counts() > 50]
 
