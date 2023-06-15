@@ -19,7 +19,7 @@ AWS_BASE_URL = 'https://numerai-signals-public-data.s3-us-west-2.amazonaws.com'
 SIGNALS_UNIVERSE = f'{AWS_BASE_URL}/latest_universe.csv'
 SIGNALS_TICKER_MAP = f'{AWS_BASE_URL}/signals_ticker_map_w_bbg.csv'
 SIGNALS_TARGETS = f'{AWS_BASE_URL}/signals_train_val_bbg.csv'
-FRIDAYONLY=False
+FRIDAYONLY=True
 
 
 
@@ -134,9 +134,11 @@ class Provider(ABC):
         # ensure we have only fridays
         print('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ')
         print(FRIDAYONLY)
+        print len(ml_data)
         print('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF ')
         if FRIDAYONLY:
             ml_data = ml_data[ml_data.index.weekday == 4]
+            print len(ml_data)
         # drop eras with under 50 observations per era
         ml_data = ml_data[ml_data.index.value_counts() > 50]
 
