@@ -20,6 +20,7 @@ SIGNALS_UNIVERSE = f'{AWS_BASE_URL}/latest_universe.csv'
 SIGNALS_TICKER_MAP = f'{AWS_BASE_URL}/signals_ticker_map_w_bbg.csv'
 SIGNALS_TARGETS = f'{AWS_BASE_URL}/signals_train_val_bbg.csv'
 FRIDAYONLY=True
+LOOKBACKDAYS=100
 
 
 
@@ -53,6 +54,10 @@ class Provider(ABC):
 
         num = ticker_data.bloomberg_ticker.unique().shape[0]
         logger.info(f'Retrieving data for {num} tickers from the database')
+
+        if FRIDAYONLY == False:
+            import datetime 
+            ticker_data = ticker_data[ticker_data['date'] > datetime.datetime.now() - datetime.timedelta(days = LOOKBACKDAYS)]
 
         return ticker_data
 
