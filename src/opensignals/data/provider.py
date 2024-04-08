@@ -16,7 +16,7 @@ from opensignals import features
 logger = logging.getLogger(__name__)
 
 #AWS_BASE_URL = 'https://numerai-signals-public-data.s3-us-west-2.amazonaws.com'
-AWS_BASE_URL = 'https://numerai-signals-public-data.s1-us-west-2.amazonaws.com'
+AWS_BASE_URL = 'https://numerai-signals-public-data.s3-us-west-2.amazonaws.com'
 SIGNALS_UNIVERSE = f'{AWS_BASE_URL}/latest_universe.csv'
 SIGNALS_TICKER_MAP = f'{AWS_BASE_URL}/signals_ticker_map_w_bbg.csv'
 SIGNALS_TARGETS = f'{AWS_BASE_URL}/signals_train_val_bbg.csv'
