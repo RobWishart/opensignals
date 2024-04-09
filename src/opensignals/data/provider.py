@@ -184,7 +184,9 @@ class Provider(ABC):
             targets['target'] = targets[target]
         else:
             targets=ticker_data.copy()
-            targets['date'] = 99
+            from datetime import date
+            today = date.today()
+            targets['date'] = today
             targets[target] = 999
 
         feature_names = []
