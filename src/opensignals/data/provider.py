@@ -174,13 +174,14 @@ class Provider(ABC):
             features_generators = []
 
         ticker_data = self.get_ticker_data(db_dir)
-
-        targets = pd.read_csv(SIGNALS_TARGETS)
-        targets['date'] = pd.to_datetime(
-            targets['friday_date'],
-            format='%Y%m%d'
-        )
-        targets['target'] = targets[target]
+                     
+        if includeTargets:
+            targets = pd.read_csv(SIGNALS_TARGETS)
+            targets['date'] = pd.to_datetime(
+                targets['friday_date'],
+                format='%Y%m%d'
+            )
+            targets['target'] = targets[target]
 
         feature_names = []
         for features_generator in features_generators:
