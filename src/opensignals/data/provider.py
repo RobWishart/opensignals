@@ -131,7 +131,7 @@ class Provider(ABC):
 
         logger.info(f'Found {ml_data.target.isna().sum()}'
                     'rows without target, filling with 0.5')
-        ml_data['target'] = ml_data['target'].fillna(0.5)
+        #ml_data['target'] = ml_data['target'].fillna(0.5)
 
         ml_data = ml_data.set_index('date')
 
