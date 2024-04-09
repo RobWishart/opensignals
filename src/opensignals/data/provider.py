@@ -159,6 +159,7 @@ class Provider(ABC):
 
     def get_data(self,
                  db_dir: pathlib.Path,
+                 includeTargets=False,
                  features_generators: Optional[List[features.FeatureGenerator]] = None,
                  last_friday: Optional[dt.datetime] = None,
                  target: str = 'target_20d',
