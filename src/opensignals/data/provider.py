@@ -123,7 +123,7 @@ class Provider(ABC):
                             feature_names: List[str],
                             targets: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """merge our feature data with Numerai targets"""
-        ml_data = pd.merge(
+        ml_data = pd.concat(
             ticker_data, targets,
             on=['date', 'bloomberg_ticker'],
             how='left'
