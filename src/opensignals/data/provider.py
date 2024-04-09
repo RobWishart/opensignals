@@ -166,7 +166,7 @@ class Provider(ABC):
                  feature_prefix: Optional[str] = None) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, List[str]]:
         """generate data set"""
         print('GET DATA XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
-        PRINT(includeTargets)
+        print(includeTargets)
                      
         if last_friday is None:
             last_friday = dt.datetime.today() - relativedelta(weekday=FR(-1))
