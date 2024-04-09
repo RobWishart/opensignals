@@ -182,6 +182,10 @@ class Provider(ABC):
                 format='%Y%m%d'
             )
             targets['target'] = targets[target]
+        else:
+            targets=ticker_data.copy()
+            targets['date'] = 99
+            targets[target] = 999
 
         feature_names = []
         for features_generator in features_generators:
