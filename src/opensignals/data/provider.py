@@ -150,6 +150,7 @@ class Provider(ABC):
             ml_data = ml_data[ml_data.index.value_counts() > 50]
 
         # train test split
+        ml_data['data_type'] = 'xxxx'                 
         train_data = ml_data[ml_data['data_type'] == 'train']
         if FRIDAYONLY:
             test_data = ml_data[ml_data['data_type'] == 'validation']
